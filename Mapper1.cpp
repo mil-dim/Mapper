@@ -3,7 +3,7 @@
 
 #include "Mapper1.h"
 
- int MapWrapper(const std::string& buffer, std::unordered_map<std::string, int>& word_counts) {
+ int mapWrapper(const std::string& buffer, std::unordered_map<std::string, int>& word_counts) {
      return Mapper1::map(buffer, word_counts);
  }
 

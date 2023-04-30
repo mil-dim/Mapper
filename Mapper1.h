@@ -15,7 +15,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
-extern "C" { MAPPER_API int MapWrapper(const std::string& buffer, std::unordered_map<std::string, int>& word_counts);}
+extern "C" { MAPPER_API int mapWrapper(const std::string& buffer, std::unordered_map<std::string, int>& word_counts);}
 extern "C" {
     class MAPPER_API  Mapper1 {
     public:
