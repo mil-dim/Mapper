@@ -2,15 +2,20 @@
 #include "pch.h"
 
 #include "Mapper1.h"
+
+ int MapWrapper(const std::string& buffer, std::unordered_map<std::string, int>& word_counts) {
+     return Mapper1::map(buffer, word_counts);
+ }
+
 //llet remove the input from here
-int  Mapper1::Map(const std::string& buffer, std::unordered_map<std::string, int>& word_counts) {
+ int __cdecl Mapper1::map(const std::string& buffer, std::unordered_map<std::string, int>& word_counts) {
     std::istringstream iss(buffer);
 
     std::string word;
 
     while (iss >> word) {
         //various cleaning steps and increment the value of the map entry
-        CleanWord(word );
+       cleanWord(word );
             //, word_counts);
         ++word_counts[word];
     }
@@ -20,7 +25,7 @@ int  Mapper1::Map(const std::string& buffer, std::unordered_map<std::string, int
 //cleaning the word is complex task, for now only removing the punctuation and lower case
 //commented code below also splits the words as super-hero on super and hero, but
 //addtional improvements on consecutive punctuation and punctuation at the beggining
-void Mapper1::CleanWord(std::string& word) {
+void Mapper1::cleanWord(std::string& word) {
     // Remove punctuation from the word   
     //super-hero become superhero -nice   will becone nice , end. will become end
     if (std::all_of(word.begin(), word.end(), [](char c) {
@@ -77,3 +82,5 @@ void Mapper::CleanWord(std::string& word, std::unordered_map<std::string, int>& 
         });
 }
 */
+
+
