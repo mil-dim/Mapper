@@ -38,7 +38,7 @@ void Mapper1::cleanWord(std::string& word) {
 
     // Convert the word to lowercase  lambda function []
     std::transform(word.begin(), word.end(), word.begin(), [](char c) {
-        return std::toupper(c);
+        return std::tolower(c);
         });
 }
 /*   
